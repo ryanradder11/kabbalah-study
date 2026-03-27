@@ -1,0 +1,72 @@
+<div class="page-content">
+  <h1 class="section-title">Quiz</h1>
+
+  @if (!session()) {
+    <mat-card class="setup-card">
+      <mat-card-header><mat-card-title>Quiz Settings</mat-card-title></mat-card-header>
+      <mat-card-content>
+        <div class="setting-row">
+          <label>Questions: {{ questionCount() }}</label>
+          <div class="count-buttons">
+            @for (n of [5,10,20]; track n) {
+              <button mat-stroked-button [class.active]="questionCount() === n" (click)="questionCount.set(n)">{{ n }}</button>
+            }
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+      </mat-card-actions>
+    </mat-card>
+
+    @if (quizSvc.history().length) {
+      <h2 class="section-title">Recent Scores</h2>
+      @for (h of quizSvc.history().slice(0,5); track $index) {
+        @if (h.completedAt) {
+          <div class="history-row">{{ h.score }}/{{ h.total }} — {{ h.completedAt | date:'short' }}</div>
+        }
+      }
+    }
+  }
+
+  @if (session() && completed()) {
+    <mat-card class="result-card">
+      <mat-card-header><mat-card-title>Quiz Complete!</mat-card-title></mat-card-header>
+      <mat-card-content>
+        <div class="score">{{ getScore() }} / {{ session()!.total }}</div>
+        <div class="score-pct">{{ (getScore() / session()!.total * 100).toFixed(0) }}%</div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="startQuiz()">Try Again</button>
+        <button mat-stroked-button (click)="session.set(null)">Settings</button>
+      </mat-card-actions>
+    </mat-card>
+  }
+
+  @if (session() && !completed() && currentQuestion(); as q) {
+    <mat-progress-bar [value]="progress()" mode="determinate" class="progress"></mat-progress-bar>
+    <div class="q-counter">{{ currentIndex() + 1 }} / {{ session()!.total }}</div>
+    <mat-card class="question-card">
+      <mat-card-header><mat-card-title>{{ q.questionText }}</mat-card-title></mat-card-header>
+      <mat-card-content>
+        <div class="options">
+          @for (opt of q.options; track $index) {
+            <button mat-stroked-button
+                    [class]="getButtonClass($index)"
+                    (click)="selectAnswer($index)"
+                    [disabled]="answered()">
+              {{ opt }}
+            </button>
+          }
+        </div>
+      </mat-card-content>
+      @if (answered()) {
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="next()">
+            {{ currentIndex() >= session()!.total - 1 ? 'Finish' : 'Next' }}
+          </button>
+        </mat-card-actions>
+      }
+    </mat-card>
+  }
+</div>

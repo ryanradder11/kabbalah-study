@@ -1,0 +1,136 @@
+import { KabbalahPath } from '../core/models/path.model';
+
+export const PATHS: KabbalahPath[] = [
+  {
+    id: 11, hebrewLetter: 'א', letterName: 'Aleph', letterNameHebrew: 'אָלֶף', letterMeaning: 'Ox',
+    letterType: 'mother', numericalValue: 1, associatedElement: 'air',
+    fromSefirah: 'keter', toSefirah: 'chokhmah', color: '#FFD700',
+    description: 'The 11th Path (Aleph) connects Keter to Chokhmah. As a Mother Letter associated with Air, it represents the breath of creation — the primordial element that carries divine speech. The transition from Crown to Wisdom, from undifferentiated unity to the first differentiated flash of insight, is mediated by air: invisible, all-pervasive, and life-giving.',
+  },
+  {
+    id: 12, hebrewLetter: 'ב', letterName: 'Bet', letterNameHebrew: 'בֵּית', letterMeaning: 'House',
+    letterType: 'double', numericalValue: 2, associatedPlanet: 'Mercury',
+    fromSefirah: 'keter', toSefirah: 'binah', color: '#FFD700',
+    description: 'The 12th Path (Bet) connects Keter to Binah. The House is the womb of manifest form. Mercury governs this path, linking the limitless Crown to the Great Mother through the principle of divine intelligence and communication. Bet is the first letter of Bereshit — "In the beginning" — and its path represents the first act of structured creation.',
+  },
+  {
+    id: 13, hebrewLetter: 'ג', letterName: 'Gimel', letterNameHebrew: 'גִּימֶל', letterMeaning: 'Camel',
+    letterType: 'double', numericalValue: 3, associatedPlanet: 'Moon',
+    fromSefirah: 'keter', toSefirah: 'tiferet', color: '#C0C0C0',
+    description: "The 13th Path (Gimel) is the Middle Pillar path connecting Keter to Tiferet — the longest unbroken descent from the Crown to the Heart of the Tree. The Camel carries its sustenance across the desert of the Abyss; this path crosses the Abyss and Da'at. The Moon governs this path, reflecting divine light in the darkness of the crossing.",
+  },
+  {
+    id: 14, hebrewLetter: 'ד', letterName: 'Dalet', letterNameHebrew: 'דָּלֶת', letterMeaning: 'Door',
+    letterType: 'double', numericalValue: 4, associatedPlanet: 'Venus',
+    fromSefirah: 'chokhmah', toSefirah: 'binah', color: '#228B22',
+    description: 'The 14th Path (Dalet) connects Chokhmah to Binah — Wisdom to Understanding — across the Supernal Triad. The Door represents the opening between the Father and Mother principles. Venus governs this path, and its essence is love: the union of masculine and feminine archetypes at the highest level, giving birth to form from formlessness.',
+  },
+  {
+    id: 15, hebrewLetter: 'ה', letterName: 'Heh', letterNameHebrew: 'הֵא', letterMeaning: 'Window',
+    letterType: 'simple', numericalValue: 5, associatedZodiac: 'Aries',
+    fromSefirah: 'chokhmah', toSefirah: 'tiferet', color: '#FF4500',
+    description: 'The 15th Path (Heh) connects Chokhmah to Tiferet. The Window lets in light from above — Wisdom illuminating the Heart. Aries, the first sign, carries the energy of initiation and divine fire. This path is the channel through which the primordial wisdom of the Father archetype flows into the beauty of the Son.',
+  },
+  {
+    id: 16, hebrewLetter: 'ו', letterName: 'Vav', letterNameHebrew: 'וָו', letterMeaning: 'Nail/Hook',
+    letterType: 'simple', numericalValue: 6, associatedZodiac: 'Taurus',
+    fromSefirah: 'chokhmah', toSefirah: 'chesed', color: '#8B4513',
+    description: 'The 16th Path (Vav) connects Chokhmah to Chesed. The Nail fastens things in place — this path fixes divine wisdom into the form of cosmic mercy and loving-kindness. Taurus governs this path, associating it with patient, fertile, earth-centered generosity. Wisdom flowing into grace.',
+  },
+  {
+    id: 17, hebrewLetter: 'ז', letterName: 'Zayin', letterNameHebrew: 'זַיִן', letterMeaning: 'Sword',
+    letterType: 'simple', numericalValue: 7, associatedZodiac: 'Gemini',
+    fromSefirah: 'binah', toSefirah: 'tiferet', color: '#FFD700',
+    description: 'The 17th Path (Zayin) connects Binah to Tiferet. The Sword of understanding cuts through illusion on the descent to beauty. Gemini, with its dualistic nature, reflects the tension between the Great Mother\'s formative understanding and the luminous harmony of Tiferet. This path relates to the twins and the interplay of opposites.',
+  },
+  {
+    id: 18, hebrewLetter: 'ח', letterName: 'Chet', letterNameHebrew: 'חֵית', letterMeaning: 'Fence',
+    letterType: 'simple', numericalValue: 8, associatedZodiac: 'Cancer',
+    fromSefirah: 'binah', toSefirah: 'gevurah', color: '#8B0000',
+    description: 'The 18th Path (Chet) connects Binah to Gevurah. The Fence encloses and protects — this path carries the organizing power of Understanding directly into the severity of divine judgment. Cancer, the sign of the nurturing shell that protects what is tender within, governs this path. Understanding here disciplines and structures power.',
+  },
+  {
+    id: 19, hebrewLetter: 'ט', letterName: 'Tet', letterNameHebrew: 'טֵית', letterMeaning: 'Serpent',
+    letterType: 'simple', numericalValue: 9, associatedZodiac: 'Leo',
+    fromSefirah: 'chesed', toSefirah: 'gevurah', color: '#FFD700',
+    description: 'The 19th Path (Tet) connects Chesed to Gevurah — Love to Strength — along the horizontal axis of the Ethical Triad. The Serpent represents primal energy, wisdom coiled in the depths. Leo governs this path with solar fire. This connection is the great axis of Balance: the tension and interplay between mercy and severity that makes creation livable.',
+  },
+  {
+    id: 20, hebrewLetter: 'י', letterName: 'Yod', letterNameHebrew: 'יוֹד', letterMeaning: 'Hand',
+    letterType: 'simple', numericalValue: 10, associatedZodiac: 'Virgo',
+    fromSefirah: 'chesed', toSefirah: 'tiferet', color: '#228B22',
+    description: 'The 20th Path (Yod) connects Chesed to Tiferet. The Hand reaches down in service — this path carries loving-kindness into the harmonizing center of the Tree. Virgo, sign of sacred service and discrimination, governs this path. Yod is the smallest letter, yet contains infinite worlds; a single point of the divine hand connecting grace to beauty.',
+  },
+  {
+    id: 21, hebrewLetter: 'כ', letterName: 'Kaph', letterNameHebrew: 'כַּף', letterMeaning: 'Palm of hand',
+    letterType: 'double', numericalValue: 20, finalFormValue: 500, associatedPlanet: 'Jupiter',
+    fromSefirah: 'chesed', toSefirah: 'netzach', color: '#4169E1',
+    description: 'The 21st Path (Kaph) connects Chesed to Netzach. The Palm receives and gives. Jupiter governs this path, the great benefic planet of expansion and blessing. This path carries the gift of divine mercy downward into the sphere of natural forces and desire, transforming abstract love into felt, passionate experience.',
+  },
+  {
+    id: 22, hebrewLetter: 'ל', letterName: 'Lamed', letterNameHebrew: 'לָמֶד', letterMeaning: 'Ox-goad',
+    letterType: 'simple', numericalValue: 30, associatedZodiac: 'Libra',
+    fromSefirah: 'gevurah', toSefirah: 'tiferet', color: '#228B22',
+    description: 'The 22nd Path (Lamed) connects Gevurah to Tiferet. The Ox-goad drives and balances — Libra, sign of the scales, governs this path that carries the energy of divine judgment into the harmonizing beauty of Tiferet. This is the path of adjustment and equilibrium, where severity is tempered into justice and justice is perfected in beauty.',
+  },
+  {
+    id: 23, hebrewLetter: 'מ', letterName: 'Mem', letterNameHebrew: 'מֵם', letterMeaning: 'Water',
+    letterType: 'mother', numericalValue: 40, finalFormValue: 600, associatedElement: 'water',
+    fromSefirah: 'gevurah', toSefirah: 'hod', color: '#000080',
+    description: 'The 23rd Path (Mem) connects Gevurah to Hod. As a Mother Letter, Mem is Water — the primordial creative element of the depths. This path carries the energy of Strength and Judgment downward into the sphere of Splendor and rational communication. Water purifies and dissolves; this path transforms the raw power of Gevurah into the ordered structure of Hod.',
+  },
+  {
+    id: 24, hebrewLetter: 'נ', letterName: 'Nun', letterNameHebrew: 'נוּן', letterMeaning: 'Fish',
+    letterType: 'simple', numericalValue: 50, finalFormValue: 700, associatedZodiac: 'Scorpio',
+    fromSefirah: 'tiferet', toSefirah: 'netzach', color: '#8B0000',
+    description: 'The 24th Path (Nun) connects Tiferet to Netzach. The Fish lives in the deep water, moving between realms. Scorpio, sign of death and transformation, governs this path. From the beauty and harmony of Tiferet, this path descends into the passions and drives of Netzach — the transformative journey where divine harmony is tested through desire.',
+  },
+  {
+    id: 25, hebrewLetter: 'ס', letterName: 'Samekh', letterNameHebrew: 'סָמֶך', letterMeaning: 'Support/Prop',
+    letterType: 'simple', numericalValue: 60, associatedZodiac: 'Sagittarius',
+    fromSefirah: 'tiferet', toSefirah: 'yesod', color: '#4169E1',
+    description: "The 25th Path (Samekh) is the Middle Pillar path connecting Tiferet to Yesod. Support — the arrow of Sagittarius points upward from Foundation to Beauty. This is the path of spiritual aspiration, the seeker's arrow aimed at the heart of the divine. It governs the transition from the conscious self (Tiferet) to the unconscious foundations (Yesod) and back.",
+  },
+  {
+    id: 26, hebrewLetter: 'ע', letterName: 'Ayin', letterNameHebrew: 'עַיִן', letterMeaning: 'Eye',
+    letterType: 'simple', numericalValue: 70, associatedZodiac: 'Capricorn',
+    fromSefirah: 'tiferet', toSefirah: 'hod', color: '#000000',
+    description: 'The 26th Path (Ayin) connects Tiferet to Hod. The Eye perceives — Capricorn, sign of disciplined ascent and the material world, governs this path. From the beauty of Tiferet, this path carries divine awareness into the realm of language, magic, and rational splendor. The Eye is the symbol of divine perception and the watchful intelligence of Hod.',
+  },
+  {
+    id: 27, hebrewLetter: 'פ', letterName: 'Peh', letterNameHebrew: 'פֵּא', letterMeaning: 'Mouth',
+    letterType: 'double', numericalValue: 80, finalFormValue: 800, associatedPlanet: 'Mars',
+    fromSefirah: 'netzach', toSefirah: 'hod', color: '#FF0000',
+    description: 'The 27th Path (Peh) connects Netzach to Hod — the horizontal axis between desire and reason in the lower triad. The Mouth speaks: Mars governs this path, bringing the energy of forceful action into the communication between passion and intellect. This is the path of the magical will expressed through word and deed.',
+  },
+  {
+    id: 28, hebrewLetter: 'צ', letterName: 'Tzadi', letterNameHebrew: 'צָדִי', letterMeaning: 'Fish-hook',
+    letterType: 'simple', numericalValue: 90, finalFormValue: 900, associatedZodiac: 'Aquarius',
+    fromSefirah: 'netzach', toSefirah: 'yesod', color: '#8A2BE2',
+    description: 'The 28th Path (Tzadi) connects Netzach to Yesod. The Fish-hook draws things from the deep — Aquarius, sign of universal humanity and the water-bearer, governs this path. From the sphere of desire and natural forces, this path channels energy into the Foundation, the deep astral reservoir of the Tree. The hook of aspiration draws up the unconscious.',
+  },
+  {
+    id: 29, hebrewLetter: 'ק', letterName: 'Qoph', letterNameHebrew: 'קוֹף', letterMeaning: 'Back of head',
+    letterType: 'simple', numericalValue: 100, associatedZodiac: 'Pisces',
+    fromSefirah: 'netzach', toSefirah: 'malkuth', color: '#8B0000',
+    description: 'The 29th Path (Qoph) connects Netzach to Malkuth. The back of the head — the unconscious, the dreaming mind — Pisces governs this path with its fluid, visionary quality. This is the path of illusion and glamour, the subtle deceptions that veil the material world. Natural desire flows into physical reality through the fog of Qoph.',
+  },
+  {
+    id: 30, hebrewLetter: 'ר', letterName: 'Resh', letterNameHebrew: 'רֵישׁ', letterMeaning: 'Head',
+    letterType: 'double', numericalValue: 200, associatedPlanet: 'Sun',
+    fromSefirah: 'hod', toSefirah: 'yesod', color: '#FFD700',
+    description: 'The 30th Path (Resh) connects Hod to Yesod. The Head rules — the Sun governs this path, bringing the clarifying light of solar consciousness into the astral foundation. From the realm of intellect and language (Hod), this path channels solar rationality into the lunar depths of Yesod, bringing conscious organization to the unconscious.',
+  },
+  {
+    id: 31, hebrewLetter: 'ש', letterName: 'Shin', letterNameHebrew: 'שִׁין', letterMeaning: 'Tooth/Flame',
+    letterType: 'mother', numericalValue: 300, associatedElement: 'fire',
+    fromSefirah: 'hod', toSefirah: 'malkuth', color: '#FF4500',
+    description: 'The 31st Path (Shin) connects Hod to Malkuth. As a Mother Letter, Shin is Fire — the divine flame that transforms and illuminates. This path carries the splendor of Hod into the kingdom of the physical world. Fire purifies: the rational, magical power of Hod is alchemically transformed into material reality through the fiery path of Shin.',
+  },
+  {
+    id: 32, hebrewLetter: 'ת', letterName: 'Tav', letterNameHebrew: 'תָּו', letterMeaning: 'Cross/Mark',
+    letterType: 'double', numericalValue: 400, associatedPlanet: 'Saturn',
+    fromSefirah: 'yesod', toSefirah: 'malkuth', color: '#000000',
+    description: 'The 32nd Path (Tav) is the final path of the Tree, connecting Yesod to Malkuth. The Cross/Mark — the last letter of the Hebrew alphabet — signifies completion. Saturn governs this path, the heaviest of the classical planets, grounding the astral energy of Yesod into the concrete reality of the Kingdom. This is the path of matter made conscious, the divine seal upon the physical world.',
+  },
+];

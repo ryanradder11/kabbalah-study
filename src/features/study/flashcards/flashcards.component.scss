@@ -1,0 +1,11 @@
+.mode-selector { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; button.active { background: #3730a3; color: white; } }
+.progress { margin-bottom: 4px; }
+.progress-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-bottom: 24px; }
+.flashcard-wrapper { perspective: 1000px; cursor: pointer; margin-bottom: 16px; }
+.flashcard { width: 100%; max-width: 480px; margin: 0 auto; height: 280px; transition: transform 0.5s; transform-style: preserve-3d; position: relative; &.flipped { transform: rotateY(180deg); } }
+.card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+.card-front { background: linear-gradient(135deg, #1a1040, #3730a3); color: white; .front-text { font-size: 3.5rem; line-height: 1.2; } .tap-hint { margin-top: 12px; font-size: 0.8rem; opacity: 0.6; } }
+.card-back { background: linear-gradient(135deg, #3730a3, #5b52cc); color: white; transform: rotateY(180deg); align-items: flex-start; }
+.back-line { margin: 4px 0; font-size: 0.95rem; line-height: 1.4; width: 100%; }
+.card-actions { display: flex; gap: 8px; justify-content: center; align-items: center; }
+.hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; }

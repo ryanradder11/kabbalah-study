@@ -1,0 +1,9 @@
+.intro { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+.world-tab { padding: 24px 0; }
+.world-header { display: flex; gap: 16px; align-items: flex-start; border-left: 4px solid; padding-left: 16px; margin-bottom: 16px; h2 { font-family: 'Noto Sans Hebrew',serif; direction: rtl; font-size: 1.8rem; margin: 0; } h3 { margin: 4px 0; } }
+.world-number { font-size: 3rem; font-weight: 700; color: rgba(255,255,255,0.15); line-height: 1; }
+.realm { font-weight: 600; color: #9d8fe8; margin: 0; }
+.world-attrs { margin-top: 16px; }
+.attr-row { display: flex; gap: 12px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+.attr-label { font-weight: 600; font-size: 0.85rem; min-width: 160px; color: rgba(255,255,255,0.55); }
+.hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; }

@@ -1,0 +1,38 @@
+<div class="page-content">
+  <h1 class="section-title">Flashcards</h1>
+
+  <div class="mode-selector">
+    <button mat-stroked-button [class.active]="mode() === 'all'" (click)="setMode('all')">All</button>
+    <button mat-stroked-button [class.active]="mode() === 'sefirot'" (click)="setMode('sefirot')">Sefirot Only</button>
+    <button mat-stroked-button [class.active]="mode() === 'paths'" (click)="setMode('paths')">Paths Only</button>
+    <button mat-icon-button (click)="startDeck()" title="Shuffle"><mat-icon>shuffle</mat-icon></button>
+  </div>
+
+  <mat-progress-bar [value]="progress()" mode="determinate" class="progress"></mat-progress-bar>
+  <div class="progress-label">{{ currentIndex() + 1 }} / {{ deck().length }} · Known: {{ knownCount() }}</div>
+
+  @if (currentCard(); as card) {
+    <div class="flashcard-wrapper" (click)="flip()">
+      <div class="flashcard" [class.flipped]="flipped()">
+        <div class="card-face card-front">
+          <span class="front-text hebrew">{{ getFrontText(card) }}</span>
+          <span class="tap-hint">Tap to reveal</span>
+        </div>
+        <div class="card-face card-back">
+          @for (line of getBackLines(card); track $index) {
+            <p class="back-line">{{ line }}</p>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="card-actions">
+      <button mat-icon-button (click)="prev()" [disabled]="currentIndex() === 0"><mat-icon>arrow_back</mat-icon></button>
+      <button mat-raised-button color="warn" (click)="markUnknown()"><mat-icon>replay</mat-icon> Still Learning</button>
+      <button mat-raised-button color="primary" (click)="markKnown()"><mat-icon>check</mat-icon> Known</button>
+      <button mat-icon-button (click)="next()" [disabled]="currentIndex() >= deck().length - 1"><mat-icon>arrow_forward</mat-icon></button>
+    </div>
+  } @else {
+    <mat-card><mat-card-content><p>No cards in this deck.</p></mat-card-content></mat-card>
+  }
+</div>

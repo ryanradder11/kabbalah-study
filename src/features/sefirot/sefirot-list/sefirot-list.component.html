@@ -1,0 +1,23 @@
+<div class="page-content">
+  <h1 class="section-title">The Ten Sefirot</h1>
+  <div class="sefirot-grid">
+    @for (s of sefirot(); track s.id) {
+      <mat-card class="sefirah-card" [class.hidden-sefirah]="s.isHidden" [routerLink]="['/sefirot', s.id]">
+        <mat-card-header>
+          <div class="sefirah-number" [style.background]="s.color.beriah">{{ s.isHidden ? '—' : s.number }}</div>
+          <mat-card-title>
+            <span class="hebrew">{{ s.hebrewName }}</span>
+          </mat-card-title>
+          <mat-card-subtitle>{{ s.transliteration }} — {{ s.meaning }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="sefirah-attrs">
+            <span class="attr-row"><strong>Divine Name:</strong> <span class="hebrew">{{ s.divineName }}</span></span>
+            <span class="attr-row"><strong>Archangel:</strong> {{ s.archangel }}</span>
+            <span class="attr-row pillar-{{ s.pillar }}"><strong>Pillar:</strong> {{ s.pillar | titlecase }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>

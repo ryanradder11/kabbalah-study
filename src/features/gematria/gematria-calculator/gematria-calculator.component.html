@@ -1,0 +1,66 @@
+<div class="page-content">
+  <h1 class="section-title">גְּמַטְרִיָּה — Gematria Calculator</h1>
+  <p class="intro">Enter Hebrew text to calculate its numerical value using standard gematria.</p>
+
+  <mat-card class="calculator-card">
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Enter Hebrew text</mat-label>
+        <input matInput
+               [value]="inputText()"
+               (input)="onInput($any($event.target).value)"
+               dir="rtl"
+               class="hebrew-input"
+               placeholder="כֶּתֶר"
+               aria-label="Hebrew text input" />
+        <mat-hint>Type Hebrew characters (Unicode) directly</mat-hint>
+      </mat-form-field>
+
+      @if (result(); as r) {
+        <div class="result-section">
+          <div class="total-value">{{ r.totalValue }}</div>
+          <div class="total-label">Total Value</div>
+
+          @if (r.letterBreakdown.length) {
+            <div class="breakdown">
+              @for (item of r.letterBreakdown; track $index) {
+                <div class="breakdown-item">
+                  <span class="hebrew letter-display">{{ item.letter }}</span>
+                  <span class="letter-value">{{ item.value }}</span>
+                </div>
+              }
+            </div>
+          }
+
+          @if (r.matchingSefirot.length || r.matchingPaths.length) {
+            <div class="matches">
+              <h4>Matching Correspondences</h4>
+              @for (s of r.matchingSefirot; track s) {
+                <a mat-stroked-button [routerLink]="['/sefirot', s]" class="match-chip">Sefirah: {{ s | titlecase }}</a>
+              }
+              @for (p of r.matchingPaths; track p) {
+                <a mat-stroked-button [routerLink]="['/paths', p]" class="match-chip">Path {{ p }}</a>
+              }
+            </div>
+          }
+        </div>
+      }
+    </mat-card-content>
+  </mat-card>
+
+  <h2 class="section-title">Hebrew Letter Values</h2>
+  <div class="letters-table">
+    @for (l of letters; track l.letter) {
+      <div class="letter-row">
+        <span class="hebrew letter-cell">{{ l.letter }}</span>
+        <span class="name-cell">{{ l.name }}</span>
+        <span class="translit-cell">{{ l.transliteration }}</span>
+        <span class="value-cell">{{ l.value }}</span>
+        @if (l.finalFormLetter) {
+          <span class="hebrew letter-cell">{{ l.finalFormLetter }}</span>
+          <span class="value-cell">{{ l.finalFormValue }}</span>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.intro { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+.calculator-card { margin-bottom: 32px; }
+.full-width { width: 100%; }
+.hebrew-input { font-family: 'Noto Sans Hebrew', serif; font-size: 1.4rem; }
+.result-section { margin-top: 24px; text-align: center; }
+.total-value { font-size: 4rem; font-weight: 700; color: #9d8fe8; line-height: 1; }
+.total-label { color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+.breakdown { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 16px; }
+.breakdown-item { display: flex; flex-direction: column; align-items: center; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; }
+.letter-display { font-size: 1.8rem; line-height: 1; }
+.letter-value { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+.matches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; justify-content: center; h4 { width: 100%; margin: 0 0 8px; } }
+.match-chip { font-size: 0.85rem; }
+.letters-table { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; }
+.letter-row { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(255,255,255,0.04); }
+.letter-cell { font-family: 'Noto Sans Hebrew', serif; font-size: 1.4rem; width: 32px; text-align: center; }
+.name-cell { flex: 1; font-weight: 500; }
+.translit-cell { flex: 1; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+.value-cell { font-weight: 700; color: #9d8fe8; min-width: 40px; text-align: right; }
+.hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; }

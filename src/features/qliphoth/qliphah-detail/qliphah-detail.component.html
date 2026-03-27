@@ -1,0 +1,18 @@
+@if (qliphah(); as q) {
+  <div class="page-content">
+    <div class="qliphah-header">
+      <h1 class="hebrew">{{ q.hebrewName }}</h1>
+      <h2>{{ q.transliteration }} — {{ q.meaning }}</h2>
+      <p class="demon">Ruling Demon: <strong>{{ q.rulingDemon }}</strong> <span class="hebrew">({{ q.rulingDemonHebrew }})</span></p>
+    </div>
+    <mat-card>
+      <mat-card-content><p class="description">{{ q.description }}</p></mat-card-content>
+    </mat-card>
+    <div class="links">
+      <a mat-stroked-button [routerLink]="['/sefirot', q.correspondingSefirah]">
+        View {{ q.correspondingSefirah | titlecase }} (Corresponding Sefirah)
+      </a>
+      <a mat-button routerLink="/qliphoth"><mat-icon>arrow_back</mat-icon> All Qliphoth</a>
+    </div>
+  </div>
+}

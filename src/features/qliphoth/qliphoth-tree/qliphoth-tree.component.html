@@ -1,0 +1,19 @@
+<div class="page-content qliphoth-page">
+  <h1 class="section-title qliphoth-title">הַקְּלִיפּוֹת — The Qliphoth</h1>
+  <p class="intro">The Qliphoth (Shells or Husks) are the shadow or inverse of the Tree of Life — the realm of the unbalanced forces and the divine attributes in their corrupted, inverted forms.</p>
+
+  <div class="qliphoth-grid">
+    @for (q of qliphoth(); track q.id) {
+      <mat-card class="qliphah-card" [routerLink]="['/qliphoth', q.id]">
+        <mat-card-header>
+          <mat-card-title><span class="hebrew">{{ q.hebrewName }}</span></mat-card-title>
+          <mat-card-subtitle>{{ q.transliteration }} — {{ q.meaning }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="demon">Ruling Demon: {{ q.rulingDemon }}</div>
+          <div class="opposite">Opposes: {{ q.correspondingSefirah | titlecase }}</div>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>

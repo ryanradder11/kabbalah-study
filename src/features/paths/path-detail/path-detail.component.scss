@@ -1,0 +1,14 @@
+.detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.letter-circle { width: 80px; height: 80px; border-radius: 50%; border: 3px solid; display: flex; align-items: center; justify-content: center; background: rgba(201,169,110,0.08); margin-bottom: 12px; }
+.letter-big { font-size: 2.5rem; font-family: 'Noto Sans Hebrew', serif; direction: rtl; }
+h1 { margin: 0 0 4px; }
+.subtitle { font-size: 1rem; color: rgba(255,255,255,0.7); margin: 0 0 16px; }
+.desc-card { margin-bottom: 16px; }
+.description { line-height: 1.7; }
+.attrs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.attr-row { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 0; align-items: baseline; }
+.attr-label { font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.55); min-width: 140px; text-transform: uppercase; }
+.attr-value { font-size: 0.95rem; a { color: #9d8fe8; } }
+.hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; }
+.nav-row { display: flex; }
+.spacer { flex: 1; }

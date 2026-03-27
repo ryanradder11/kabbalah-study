@@ -1,0 +1,57 @@
+<div class="page-content">
+  <h1 class="section-title">Bookmarks</h1>
+
+  @if (!sefirahBookmarks().length && !pathBookmarks().length && !qliphahBookmarks().length) {
+    <p class="empty">No bookmarks yet. Bookmark any Sefirah, Path, or Qliphah from their detail pages.</p>
+  }
+
+  @if (sefirahBookmarks().length) {
+    <h2 class="group-title">Sefirot</h2>
+    <mat-list>
+      @for (item of sefirahBookmarks(); track item.bookmark.entityId) {
+        <mat-list-item>
+          <span matListItemTitle>
+            <a [routerLink]="item.route" class="hebrew">{{ item.data!.hebrewName }}</a>
+            {{ item.data!.transliteration }} — {{ item.data!.meaning }}
+          </span>
+          <button mat-icon-button matListItemMeta (click)="removeBookmark('sefirah', item.bookmark.entityId)">
+            <mat-icon>bookmark_remove</mat-icon>
+          </button>
+        </mat-list-item>
+      }
+    </mat-list>
+  }
+
+  @if (pathBookmarks().length) {
+    <h2 class="group-title">Paths</h2>
+    <mat-list>
+      @for (item of pathBookmarks(); track item.bookmark.entityId) {
+        <mat-list-item>
+          <span matListItemTitle>
+            <a [routerLink]="item.route"><span class="hebrew">{{ item.data!.hebrewLetter }}</span> {{ item.data!.letterName }} (Path {{ item.data!.id }})</a>
+          </span>
+          <button mat-icon-button matListItemMeta (click)="removeBookmark('path', item.bookmark.entityId)">
+            <mat-icon>bookmark_remove</mat-icon>
+          </button>
+        </mat-list-item>
+      }
+    </mat-list>
+  }
+
+  @if (qliphahBookmarks().length) {
+    <h2 class="group-title">Qliphoth</h2>
+    <mat-list>
+      @for (item of qliphahBookmarks(); track item.bookmark.entityId) {
+        <mat-list-item>
+          <span matListItemTitle>
+            <a [routerLink]="item.route" class="hebrew">{{ item.data!.hebrewName }}</a>
+            {{ item.data!.transliteration }}
+          </span>
+          <button mat-icon-button matListItemMeta (click)="removeBookmark('qliphah', item.bookmark.entityId)">
+            <mat-icon>bookmark_remove</mat-icon>
+          </button>
+        </mat-list-item>
+      }
+    </mat-list>
+  }
+</div>

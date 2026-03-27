@@ -1,0 +1,26 @@
+<div class="page-content">
+  <h1 class="section-title">The 22 Paths</h1>
+  <div class="paths-grid">
+    @for (p of paths(); track p.id) {
+      <mat-card class="path-card" [routerLink]="['/paths', p.id]">
+        <mat-card-header>
+          <div class="path-letter" [style.border-color]="p.color"><span class="hebrew">{{ p.hebrewLetter }}</span></div>
+          <mat-card-title>{{ p.id }}. {{ p.letterName }}</mat-card-title>
+          <mat-card-subtitle>{{ p.letterMeaning }} · {{ p.fromSefirah | titlecase }} → {{ p.toSefirah | titlecase }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-chip [style.background]="getTypeColor(p.letterType)">{{ p.letterType | titlecase }}</mat-chip>
+          @if (p.associatedElement) {
+            <mat-chip>{{ p.associatedElement }}</mat-chip>
+          }
+          @if (p.associatedPlanet) {
+            <mat-chip>{{ p.associatedPlanet }}</mat-chip>
+          }
+          @if (p.associatedZodiac) {
+            <mat-chip>{{ p.associatedZodiac }}</mat-chip>
+          }
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>

@@ -1,0 +1,78 @@
+@if (path(); as p) {
+  <div class="page-content">
+    <div class="detail-header">
+      <div>
+        <div class="letter-circle" [style.border-color]="p.color">
+          <span class="hebrew letter-big">{{ p.hebrewLetter }}</span>
+        </div>
+        <h1>Path {{ p.id }}: {{ p.letterName }}</h1>
+        <h2 class="subtitle">{{ p.letterMeaning }} · {{ p.fromSefirah | titlecase }} → {{ p.toSefirah | titlecase }}</h2>
+      </div>
+      <button mat-icon-button (click)="toggleBookmark()">
+        <mat-icon>{{ isBookmarked() ? 'bookmark' : 'bookmark_border' }}</mat-icon>
+      </button>
+    </div>
+
+    <mat-card class="desc-card">
+      <mat-card-content><p class="description">{{ p.description }}</p></mat-card-content>
+    </mat-card>
+
+    <div class="attrs-grid">
+      <mat-card>
+        <mat-card-header><mat-card-title>Letter Attributes</mat-card-title></mat-card-header>
+        <mat-card-content>
+          <div class="attr-row"><span class="attr-label">Hebrew Letter</span><span class="hebrew attr-value">{{ p.hebrewLetter }} ({{ p.letterNameHebrew }})</span></div>
+          <mat-divider></mat-divider>
+          <div class="attr-row"><span class="attr-label">Name</span><span class="attr-value">{{ p.letterName }}</span></div>
+          <mat-divider></mat-divider>
+          <div class="attr-row"><span class="attr-label">Meaning</span><span class="attr-value">{{ p.letterMeaning }}</span></div>
+          <mat-divider></mat-divider>
+          <div class="attr-row"><span class="attr-label">Type</span><span class="attr-value">{{ p.letterType | titlecase }}</span></div>
+          <mat-divider></mat-divider>
+          <div class="attr-row"><span class="attr-label">Numerical Value</span><span class="attr-value">{{ p.numericalValue }}</span></div>
+          @if (p.finalFormValue) {
+            <mat-divider></mat-divider>
+            <div class="attr-row"><span class="attr-label">Final Form Value</span><span class="attr-value">{{ p.finalFormValue }}</span></div>
+          }
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header><mat-card-title>Cosmic Correspondences</mat-card-title></mat-card-header>
+        <mat-card-content>
+          @if (p.associatedElement) {
+            <div class="attr-row"><span class="attr-label">Element</span><span class="attr-value">{{ p.associatedElement | titlecase }}</span></div>
+            <mat-divider></mat-divider>
+          }
+          @if (p.associatedPlanet) {
+            <div class="attr-row"><span class="attr-label">Planet</span><span class="attr-value">{{ p.associatedPlanet }}</span></div>
+            <mat-divider></mat-divider>
+          }
+          @if (p.associatedZodiac) {
+            <div class="attr-row"><span class="attr-label">Zodiac Sign</span><span class="attr-value">{{ p.associatedZodiac | titlecase }}</span></div>
+            <mat-divider></mat-divider>
+          }
+          <div class="attr-row"><span class="attr-label">Connects</span>
+            <span class="attr-value">
+              <a [routerLink]="['/sefirot', p.fromSefirah]">{{ p.fromSefirah | titlecase }}</a>
+              →
+              <a [routerLink]="['/sefirot', p.toSefirah]">{{ p.toSefirah | titlecase }}</a>
+            </span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="nav-row">
+      @if (prevNext().prev; as prev) {
+        <a mat-button [routerLink]="['/paths', prev.id]"><mat-icon>arrow_back</mat-icon> Path {{ prev.id }}</a>
+      }
+      <span class="spacer"></span>
+      @if (prevNext().next; as next) {
+        <a mat-button [routerLink]="['/paths', next.id]">Path {{ next.id }} <mat-icon>arrow_forward</mat-icon></a>
+      }
+    </div>
+  </div>
+} @else {
+  <div class="page-content"><p>Path not found.</p></div>
+}

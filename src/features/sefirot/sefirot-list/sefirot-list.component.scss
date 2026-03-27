@@ -1,0 +1,6 @@
+.sefirot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.sefirah-card { cursor: pointer; transition: transform 0.2s; &:hover { transform: translateY(-2px); } }
+.hidden-sefirah { opacity: 0.75; border: 1px dashed #888; }
+.sefirah-number { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 1rem; margin-right: 12px; }
+.attr-row { display: block; font-size: 0.85rem; margin-bottom: 4px; }
+.hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; font-size: 1.1em; }

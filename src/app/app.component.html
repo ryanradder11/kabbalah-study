@@ -1,0 +1,40 @@
+<mat-sidenav-container class="app-container">
+  <mat-sidenav
+    #sidenav
+    [opened]="sidenavOpen()"
+    mode="side"
+    class="app-sidenav"
+  >
+    <div class="sidenav-header">
+      <span class="title-font sidenav-title">עֵץ חַיִּים</span>
+      <span class="sidenav-subtitle">Etz Chaim</span>
+    </div>
+
+    <mat-nav-list>
+      @for (item of navItems; track item.route) {
+        <a
+          mat-list-item
+          [routerLink]="item.route"
+          routerLinkActive="nav-active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        >
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ item.label }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-content">
+    <mat-toolbar class="app-toolbar" color="primary">
+      <button mat-icon-button (click)="toggleSidenav()" aria-label="Toggle menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title title-font">Kabbalah Study</span>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,86 @@
+@use '@angular/material' as mat;
+
+// Angular Material 21 M3 theming
+$kabbalah-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$violet-palette,
+    tertiary: mat.$rose-palette,
+  ),
+  density: (
+    scale: 0,
+  ),
+));
+
+$kabbalah-dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$violet-palette,
+    tertiary: mat.$rose-palette,
+  ),
+));
+
+html {
+  @include mat.all-component-themes($kabbalah-theme);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    @include mat.all-component-colors($kabbalah-dark-theme);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap');
+
+:root {
+  --color-primary: #3730a3;
+  --color-accent: #d97706;
+  --color-gold: #c9a96e;
+  --color-surface: #f8f7ff;
+  --color-on-surface: #1a1a2e;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Noto Sans Hebrew', Roboto, Arial, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+.hebrew {
+  font-family: 'Noto Sans Hebrew', serif;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.title-font { font-family: 'Cinzel', serif; }
+.pillar-mercy { color: #4169e1; }
+.pillar-severity { color: #cc0000; }
+.pillar-middle { color: #8a2be2; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 3px; }
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: #0d0d1a;
+    --color-on-surface: #e8e6ff;
+  }
+}

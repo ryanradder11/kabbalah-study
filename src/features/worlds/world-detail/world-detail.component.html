@@ -1,0 +1,16 @@
+@if (world(); as w) {
+  <div class="page-content">
+    <div class="world-header" [style.border-color]="w.color">
+      <h1 class="hebrew">{{ w.hebrewName }}</h1>
+      <h2>{{ w.transliteration }} — {{ w.meaning }}</h2>
+      <p>{{ w.realm }}</p>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <p>{{ w.description }}</p>
+        <p>{{ w.sefirotExpression }}</p>
+      </mat-card-content>
+    </mat-card>
+    <a mat-button routerLink="/worlds"><mat-icon>arrow_back</mat-icon> All Worlds</a>
+  </div>
+}

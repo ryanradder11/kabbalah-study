@@ -1,0 +1,31 @@
+<div class="page-content">
+  <h1 class="section-title">The Four Worlds</h1>
+  <p class="intro">The Four Worlds (Arba Olamot) describe the levels of divine emanation from the infinite Ein Sof down to the material universe.</p>
+
+  <mat-tab-group>
+    @for (w of worlds(); track w.transliteration) {
+      <mat-tab [label]="w.transliteration">
+        <div class="world-tab">
+          <div class="world-header" [style.border-left-color]="w.color">
+            <span class="world-number">{{ w.order }}</span>
+            <div>
+              <h2 class="hebrew">{{ w.hebrewName }}</h2>
+              <h3>{{ w.transliteration }} — {{ w.meaning }}</h3>
+              <p class="realm">{{ w.realm }}</p>
+            </div>
+          </div>
+          <mat-card>
+            <mat-card-content>
+              <p>{{ w.description }}</p>
+              <div class="world-attrs">
+                <div class="attr-row"><span class="attr-label">Divine Aspect</span><span>{{ w.divineAspect }}</span></div>
+                <div class="attr-row"><span class="attr-label">Divine Name</span><span class="hebrew">{{ w.correspondingName }}</span></div>
+                <div class="attr-row"><span class="attr-label">Sefirot in this World</span><span>{{ w.sefirotExpression }}</span></div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-tab>
+    }
+  </mat-tab-group>
+</div>

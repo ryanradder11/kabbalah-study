@@ -1,0 +1,17 @@
+<div class="tree-page">
+  <div class="tree-controls">
+    <button mat-stroked-button (click)="showDaat.update(v => !v)">
+      <mat-icon>{{ showDaat() ? 'visibility_off' : 'visibility' }}</mat-icon>
+      {{ showDaat() ? 'Hide' : 'Show' }} Da'at
+    </button>
+    <button mat-stroked-button (click)="showQliphoth.update(v => !v)">
+      <mat-icon>dark_mode</mat-icon>
+      {{ showQliphoth() ? 'Hide' : 'Show' }} Qliphoth
+    </button>
+  </div>
+  <app-tree-canvas
+    [showDaat]="showDaat()"
+    [showQliphoth]="showQliphoth()"
+    class="tree-canvas"
+  ></app-tree-canvas>
+</div>

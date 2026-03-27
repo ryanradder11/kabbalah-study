@@ -1,0 +1,43 @@
+<div class="page-content">
+  <h1 class="section-title">בָּרוּךְ הַבָּא — Welcome</h1>
+  <p class="subtitle">Study the Classical Jewish Kabbalah: the Tree of Life, its Sefirot, Paths, and the Four Worlds.</p>
+
+  <div class="stats-row">
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <mat-icon>notes</mat-icon>
+        <div class="stat-value">{{ noteCount() }}</div>
+        <div class="stat-label">Notes</div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-card-content>
+        <mat-icon>bookmark</mat-icon>
+        <div class="stat-value">{{ bookmarkCount() }}</div>
+        <div class="stat-label">Bookmarks</div>
+      </mat-card-content>
+    </mat-card>
+    @if (lastQuizScore()) {
+      <mat-card class="stat-card">
+        <mat-card-content>
+          <mat-icon>quiz</mat-icon>
+          <div class="stat-value">{{ lastQuizScore()!.score }}/{{ lastQuizScore()!.total }}</div>
+          <div class="stat-label">Last Quiz</div>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+
+  <h2 class="section-title">Quick Access</h2>
+  <div class="quick-links">
+    @for (link of quickLinks; track link.route) {
+      <mat-card class="quick-card" [routerLink]="link.route">
+        <mat-card-content>
+          <mat-icon class="quick-icon">{{ link.icon }}</mat-icon>
+          <h3>{{ link.label }}</h3>
+          <p>{{ link.desc }}</p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</div>
