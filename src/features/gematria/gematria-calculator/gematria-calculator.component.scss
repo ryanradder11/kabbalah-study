@@ -18,3 +18,108 @@
 .translit-cell { flex: 1; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
 .value-cell { font-weight: 700; color: #9d8fe8; min-width: 40px; text-align: right; }
 .hebrew { font-family: 'Noto Sans Hebrew', serif; direction: rtl; }
+
+// Visual Hebrew Keyboard
+.keyboard-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+
+.key-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sofit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.sofit-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+}
+
+.util-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.util-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  mat-icon { font-size: 1.1rem; width: 1.1rem; height: 1.1rem; }
+}
+
+.heb-key {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  height: 68px;
+  padding: 4px 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  gap: 1px;
+
+  &:hover {
+    background: rgba(157,143,232,0.15);
+    border-color: rgba(157,143,232,0.5);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    background: rgba(157,143,232,0.25);
+  }
+}
+
+.sofit-key {
+  opacity: 0.8;
+  border-style: dashed;
+}
+
+.key-letter {
+  font-family: 'Noto Sans Hebrew', serif;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.key-name {
+  font-size: 0.58rem;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.key-val {
+  font-size: 0.68rem;
+  color: #9d8fe8;
+  font-weight: 600;
+}

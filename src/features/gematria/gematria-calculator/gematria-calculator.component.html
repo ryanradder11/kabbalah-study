@@ -13,7 +13,7 @@
                class="hebrew-input"
                placeholder="כֶּתֶר"
                aria-label="Hebrew text input" />
-        <mat-hint>Type Hebrew characters (Unicode) directly</mat-hint>
+        <mat-hint>Type directly or use the keyboard below</mat-hint>
       </mat-form-field>
 
       @if (result(); as r) {
@@ -47,6 +47,41 @@
       }
     </mat-card-content>
   </mat-card>
+
+  <!-- Visual Hebrew Keyboard -->
+  <div class="keyboard-wrap">
+    @for (row of keyboardRows; track $index) {
+      <div class="key-row">
+        @for (l of row; track l.letter) {
+          <button class="heb-key" (click)="insertLetter(l.letter)" [attr.aria-label]="l.name">
+            <span class="key-letter">{{ l.letter }}</span>
+            <span class="key-name">{{ l.name }}</span>
+            <span class="key-val">{{ l.value }}</span>
+          </button>
+        }
+      </div>
+    }
+
+    <div class="sofit-row">
+      <span class="sofit-label">Final forms</span>
+      @for (k of sofitKeys; track k.letter) {
+        <button class="heb-key sofit-key" (click)="insertLetter(k.letter)" [attr.aria-label]="k.name + ' final'">
+          <span class="key-letter">{{ k.letter }}</span>
+          <span class="key-name">{{ k.name }}</span>
+          <span class="key-val">{{ k.value }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="util-row">
+      <button mat-stroked-button class="util-btn" (click)="deleteLast()" aria-label="Backspace">
+        <mat-icon>backspace</mat-icon> Backspace
+      </button>
+      <button mat-stroked-button class="util-btn" (click)="clearInput()" aria-label="Clear">
+        <mat-icon>clear</mat-icon> Clear
+      </button>
+    </div>
+  </div>
 
   <h2 class="section-title">Hebrew Letter Values</h2>
   <div class="letters-table">
