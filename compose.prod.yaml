@@ -3,7 +3,9 @@ services:
     image: ghcr.io/ryanradder11/kabbalah-web:latest
     restart: always
     networks:
-      - web-proxy
+      web-proxy:
+        aliases:
+          - kabbalah-web
 
 networks:
   web-proxy:
