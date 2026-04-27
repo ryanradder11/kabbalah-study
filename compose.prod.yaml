@@ -1,0 +1,10 @@
+services:
+  web:
+    image: ghcr.io/ryanradder11/kabbalah-web:latest
+    restart: always
+    networks:
+      - web-proxy
+
+networks:
+  web-proxy:
+    external: true
